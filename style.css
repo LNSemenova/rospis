@@ -1667,3 +1667,34 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 
   body.панель-с-переходом .липкая-кнопка { transition: none; }
 }
+
+/* экран 02 */
+#экран-02 .витрина { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 7vw, 112px); align-items: start; }
+  #экран-02 .витрина__шапка { position: sticky; top: 48px; }
+  #экран-02 .витрина__шапка h2 { margin: 0 0 20px; }
+  #экран-02 .витрина__шапка .лид { margin: 0; max-width: 30ch; }
+  #экран-02 .строки { list-style: none; margin: 0; padding: 0; }
+  #экран-02 .строка { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: clamp(20px, 4vw, 56px); align-items: baseline; padding: clamp(24px, 3vw, 40px) 0; border-top: 1px solid transparent; }
+  #экран-02 .строка:last-child { border-bottom: 1px solid transparent; }
+  #экран-02 .строка__имя { margin: 0 0 8px; font-size: var(--кегль-лид); font-weight: 700; line-height: 1.2; }
+  #экран-02 .строка__описание { margin: 0; font-size: var(--кегль-текст); line-height: 1.5; max-width: 34ch; }
+  #экран-02 .строка__цена { margin: 0; font-size: var(--кегль-h2); font-weight: 600; line-height: 1; letter-spacing: -0.01em; white-space: nowrap; }
+  #экран-02 .примечание { margin: clamp(24px, 3vw, 36px) 0 0; font-size: var(--кегль-мелкий); line-height: 1.55; max-width: 52ch; }
+  #экран-02 .действие { margin-top: clamp(32px, 4vw, 48px); }
+
+  #экран-02.светлый .строка, #экран-02.светлый .строка:last-child { border-color: var(--цвет-линия); }
+  #экран-02.светлый .строка__описание, #экран-02.светлый .примечание { color: var(--цвет-текст-мягкий); }
+  #экран-02.светлый .строка__цена { color: var(--цвет-акцент-тёмный); }
+  #экран-02.светлый .строка__имя { color: var(--цвет-текст); }
+  #экран-02.тёмный .строка, #экран-02.тёмный .строка:last-child { border-color: color-mix(in srgb, var(--цвет-тёмный-текст) 22%, transparent); }
+  #экран-02.тёмный .строка__описание, #экран-02.тёмный .примечание { color: color-mix(in srgb, var(--цвет-тёмный-текст) 74%, transparent); }
+  #экран-02.тёмный .строка__цена { color: var(--цвет-тёплый-мягкий); }
+  #экран-02.тёмный .строка__имя { color: var(--цвет-тёмный-текст); }
+
+  @media (max-width: 899px) {
+    #экран-02 .витрина { grid-template-columns: 1fr; gap: 28px; }
+    #экран-02 .витрина__шапка { position: static; }
+    #экран-02 .строка { grid-template-columns: 1fr; row-gap: 14px; }
+    #экран-02 .строка__цена { order: 2; }
+    #экран-02 .строка__текст { order: 1; }
+  }
