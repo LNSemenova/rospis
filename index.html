@@ -122,73 +122,46 @@
 </section>
 <section class="блок блок--работы тёмный второй фон--пятна" id="экран-02" data-тип="работы" data-вёрстка="своя">
 <div class="блок__внутри">
-  <div class="преображение">
-    <div>
-      <p class="кикер">Работы</p>
-      <h2>Была фабричной — стала единственной</h2>
-      <p class="лид">Потяните шторку на снимке — увидите, какой игрушка была до меня</p>
-      <ul class="выбор">
-        <li><button type="button" data-пара="0" aria-pressed="true">Купчиха</button></li>
-        <li><button type="button" data-пара="1" aria-pressed="false">Пушкин</button></li>
-        <li><button type="button" data-пара="2" aria-pressed="false">Фрида Кало</button></li>
-      </ul>
-      <p class="история" data-история>Купчиха за чаем — переписала фабричную фигурку Будды</p>
-    </div>
-    <figure class="фото витрина-фон шторка">
-      <img class="стало" src="img/kupchiha-stalo.webp" alt="Купчиха за чаем — роспись Людмилы Семеновой" loading="lazy" decoding="async">
-      <img class="было" src="img/kupchiha-bylo.webp" alt="Фабричная фигурка Будды до росписи" loading="lazy" decoding="async">
-      <span class="ярлык ярлык--было">Было</span><span class="ярлык ярлык--стало">Стало</span>
-      <span class="линия"></span>
-      <svg class="шар" viewBox="0 0 64 84" aria-hidden="true"><line class="нить" x1="32" y1="0" x2="32" y2="12"/><circle class="нить" cx="32" cy="15" r="3.5"/><rect class="колпачок" x="26" y="18" width="12" height="7" rx="1.5"/><circle class="тело" cx="32" cy="52" r="27"/><g class="снежинка"><line x1="32" y1="35" x2="32" y2="69"/><line x1="17.3" y1="43.5" x2="46.7" y2="60.5"/><line x1="17.3" y1="60.5" x2="46.7" y2="43.5"/><path d="M28 38l4 4 4-4M28 66l4-4 4 4M18.5 48.5l5.5-1.5-1.5-5.5M45.5 55.5l-5.5 1.5 1.5 5.5M18.5 55.5l5.5 1.5-1.5 5.5M45.5 48.5l-5.5-1.5 1.5-5.5"/></g></svg>
-      <input type="range" min="0" max="100" value="50" step="0.5" aria-label="Сдвинуть шторку: было — стало">
-    </figure>
+  <div class="шапка-работ">
+    <p class="кикер">Работы</p>
+    <h2>Была фабричной — стала единственной</h2>
+    <p class="лид">В уголке — какой игрушка была до меня</p>
   </div>
 
-  <div class="ещё">
-    <h3>Ещё работы</h3>
-    <div class="стрелки">
-      <button class="стрелка" type="button" data-куда="-1" aria-label="Назад"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
-      <button class="стрелка" type="button" data-куда="1" aria-label="Дальше"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
-    </div>
-  </div>
+  <ul class="преображения">
+    <li>
+      <figure class="фото студия">
+        <img src="img/kupchiha-stalo.webp" alt="Купчиха за чаем — роспись Людмилы Семеновой" loading="lazy" decoding="async">
+        <figure class="было-врезка"><span>Было</span><img src="img/kupchiha-bylo.webp" alt="Фабричная фигурка Будды до росписи" loading="lazy" decoding="async"></figure>
+      </figure>
+      <p class="кадр-имя">Купчиха за чаем</p>
+      <p class="кадр-что">Переписала фабричную фигурку Будды</p>
+    </li>
+    <li>
+      <figure class="фото студия">
+        <img src="img/pushkin-stalo.webp" alt="Пушкин — роспись Людмилы Семеновой" loading="lazy" decoding="async">
+        <figure class="было-врезка"><span>Было</span><img src="img/pushkin-bylo.webp" alt="Фабричная фигурка Будды до росписи" loading="lazy" decoding="async"></figure>
+      </figure>
+      <p class="кадр-имя">Пушкин</p>
+      <p class="кадр-что">Из второй такой же фигурки Будды</p>
+    </li>
+    <li>
+      <figure class="фото студия">
+        <img src="img/frida-stalo.webp" alt="Фрида Кало — роспись Людмилы Семеновой" loading="lazy" decoding="async">
+        <figure class="было-врезка"><span>Было</span><img src="img/frida-bylo.webp" alt="Фабричный ангел до росписи" loading="lazy" decoding="async"></figure>
+      </figure>
+      <p class="кадр-имя">Фрида Кало</p>
+      <p class="кадр-что">Из фабричного ангела</p>
+    </li>
+  </ul>
+
+  <div class="ещё"><h3>Ещё работы</h3></div>
   <ul class="плёнка">
-    <li class="плёнка-кадр"><figure class="фото витрина-фон"><img src="img/tsarevna.webp" alt="Девочка в образе сказочной царевны — портрет на шаре" loading="lazy" decoding="async"></figure><p class="кадр-имя">Царевна</p><p class="кадр-что">Портрет: девочка в образе сказочной царевны</p></li>
-    <li class="плёнка-кадр"><figure class="фото витрина-фон"><img src="img/rusalka.webp" alt="Русалка на камне — роспись на чистой форме" loading="lazy" decoding="async"></figure><p class="кадр-имя">Русалка на камне</p><p class="кадр-что">Роспись на голье — мой сюжет</p></li>
-    <li class="плёнка-кадр"><figure class="фото витрина-фон"><img src="img/volk.webp" alt="Волк в пёстром кафтане — роспись на чистой форме" loading="lazy" decoding="async"></figure><p class="кадр-имя">Волк</p><p class="кадр-что">Роспись на голье — мой сюжет</p></li>
-    <li class="плёнка-кадр"><figure class="фото витрина-фон"><img src="img/shlyapnik.webp" alt="Безумный Шляпник — переписанная фабричная игрушка" loading="lazy" decoding="async"></figure><p class="кадр-имя">Безумный Шляпник</p><p class="кадр-что">Перероспись фабричной игрушки</p></li>
+    <li class="плёнка-кадр"><figure class="фото студия"><img src="img/rusalka.webp" alt="Русалка на камне — роспись на чистой форме" loading="lazy" decoding="async"></figure><p class="кадр-имя">Русалка на камне</p><p class="кадр-что">Роспись на голье — мой сюжет</p></li>
+    <li class="плёнка-кадр"><figure class="фото студия"><img src="img/volk.webp" alt="Волк в пёстром кафтане — роспись на чистой форме" loading="lazy" decoding="async"></figure><p class="кадр-имя">Волк</p><p class="кадр-что">Роспись на голье — мой сюжет</p></li>
+    <li class="плёнка-кадр"><figure class="фото студия"><img src="img/shlyapnik.webp" alt="Безумный Шляпник — переписанная фабричная игрушка" loading="lazy" decoding="async"></figure><p class="кадр-имя">Безумный Шляпник</p><p class="кадр-что">Перероспись фабричной игрушки</p></li>
   </ul>
 </div>
-<script>
-(() => {
-  const экран = document.getElementById('экран-02');
-  if (!экран) return;
-  const пары = [
-    { стало: 'img/kupchiha-stalo.webp', было: 'img/kupchiha-bylo.webp', имя: 'Купчиха за чаем', история: 'Купчиха за чаем — переписала фабричную фигурку Будды' },
-    { стало: 'img/pushkin-stalo.webp', было: 'img/pushkin-bylo.webp', имя: 'Пушкин', история: 'Пушкин — из второй такой же фигурки Будды' },
-    { стало: 'img/frida-stalo.webp', было: 'img/frida-bylo.webp', имя: 'Фрида Кало', история: 'Фрида Кало — из фабричного ангела' }
-  ];
-  const шторка = экран.querySelector('.шторка');
-  const ползунок = шторка.querySelector('input');
-  const стало = шторка.querySelector('.стало'), было = шторка.querySelector('.было');
-  const история = экран.querySelector('[data-история]');
-  const поставить = v => шторка.style.setProperty('--x', v + '%');
-  ползунок.addEventListener('input', () => поставить(ползунок.value));
-  пары.forEach(п => { new Image().src = п.стало; new Image().src = п.было; });
-  экран.querySelectorAll('[data-пара]').forEach(к => к.addEventListener('click', () => {
-    const п = пары[Number(к.dataset.пара)];
-    стало.src = п.стало; стало.alt = п.имя + ' — роспись Людмилы Семеновой';
-    было.src = п.было; было.alt = 'Фабричная игрушка до росписи';
-    история.textContent = п.история;
-    ползунок.value = 50; поставить(50);
-    экран.querySelectorAll('[data-пара]').forEach(д => д.setAttribute('aria-pressed', д === к ? 'true' : 'false'));
-  }));
-  const плёнка = экран.querySelector('.плёнка');
-  экран.querySelectorAll('.стрелка').forEach(к => к.addEventListener('click', () => {
-    const шаг = плёнка.querySelector('.плёнка-кадр').getBoundingClientRect().width + 20;
-    плёнка.scrollBy({ left: шаг * Number(к.dataset.куда), behavior: 'smooth' });
-  }));
-})();
-</script>
 </section>
 <section class="блок блок--прайс-лист тёмный фон--пятна" id="экран-05" data-тип="прайс-лист" data-вёрстка="своя">
 <div class="блок__внутри">
