@@ -1774,6 +1774,42 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-03 .стрелка-к { transform: rotate(90deg); }
   }
 
+/* экран 04 */
+#экран-04 .портретная { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 7vw, 104px); align-items: center; }
+  #экран-04 .портретная__кадр { margin: 0; position: relative; border-radius: var(--радиус-плитки); border: 1px solid transparent; padding: clamp(8px, 1vw, 12px); }
+  #экран-04 .портретная__кадр img { display: block; width: 100%; height: auto; border-radius: var(--радиус-плитки); }
+  #экран-04 .рассказ h2 { margin: 0 0 14px; }
+  #экран-04 .рассказ .лид { margin: 0 0 clamp(22px, 3vw, 32px); }
+  #экран-04 .рассказ .абзац { margin: 0 0 16px; max-width: 46ch; font-size: var(--кегль-текст); line-height: 1.65; }
+  #экран-04 .семья { padding-left: 18px; border-left: 3px solid transparent; }
+  #экран-04 .итоги { list-style: none; margin: clamp(26px, 4vw, 44px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  #экран-04 .итог { padding: 16px 14px; border-radius: var(--радиус-плитки); border: 1px solid transparent; display: grid; gap: 6px; align-content: start; }
+  #экран-04 .итог__число { font-size: var(--кегль-цифра); font-weight: 600; line-height: 1; white-space: nowrap; }
+  #экран-04 .итог__подпись { font-size: var(--кегль-мелкий); line-height: 1.35; }
+
+  #экран-04.тёмный .портретная__кадр { background: var(--цвет-тёмный-фон-3); border-color: color-mix(in srgb, var(--цвет-тёмный-текст) 14%, transparent); box-shadow: var(--тень-глубокая); }
+  #экран-04.тёмный .рассказ .абзац { color: color-mix(in srgb, var(--цвет-тёмный-текст) 84%, transparent); }
+  #экран-04.тёмный .семья { border-left-color: var(--цвет-тёплый); }
+  #экран-04.тёмный .итог { background: color-mix(in srgb, var(--цвет-тёмный-текст) 6%, transparent); border-color: color-mix(in srgb, var(--цвет-тёмный-текст) 16%, transparent); }
+  #экран-04.тёмный .итог__число { color: var(--цвет-тёплый-мягкий); }
+  #экран-04.тёмный .итог__подпись { color: color-mix(in srgb, var(--цвет-тёмный-текст) 76%, transparent); }
+
+  #экран-04.светлый .портретная__кадр { background: var(--цвет-фон-карточки); border-color: var(--цвет-линия); box-shadow: var(--тень-чип); }
+  #экран-04.светлый .рассказ .абзац { color: var(--цвет-текст-мягкий); }
+  #экран-04.светлый .семья { border-left-color: var(--цвет-тёплый); }
+  #экран-04.светлый .итог { background: var(--цвет-фон-карточки); border-color: var(--цвет-линия); }
+  #экран-04.светлый .итог__число { color: var(--цвет-акцент-тёмный); }
+  #экран-04.светлый .итог__подпись { color: var(--цвет-текст-мягкий); }
+
+  @media (max-width: 899px) {
+    #экран-04 .портретная { grid-template-columns: 1fr; gap: 28px; }
+    #экран-04 .итоги { grid-template-columns: 1fr; gap: 10px; }
+    #экран-04 .итог { grid-template-columns: 9rem 1fr; align-items: center; column-gap: 12px; padding: 14px 18px; }
+    #экран-04 .портретная__кадр { max-width: 440px; }
+    #экран-04 .итоги { gap: 8px; }
+    #экран-04 .итог { padding: 12px 10px; }
+  }
+
 /* экран 06 */
 #экран-06 .витрина { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 6vw, 96px); align-items: start; }
   #экран-06 .витрина__шапка { position: sticky; top: 48px; }
