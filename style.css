@@ -1726,6 +1726,13 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-02.светлый .шар .снежинка { stroke: var(--цвет-фон-карточки); }
   #экран-02.светлый .ярлык { background: var(--цвет-стекло); color: var(--цвет-тёмный-текст); }
 
+  #экран-02 .к-портретам { margin-top: clamp(32px, 4vw, 48px); display: flex; align-items: center; gap: clamp(14px, 2vw, 24px); padding: 14px 22px 14px 14px; border-radius: var(--радиус-плитки); text-decoration: none; max-width: 560px; background: var(--цвет-тёплый-мягкий); color: var(--цвет-акцент-тёмный); box-shadow: var(--тень-глубокая); }
+  #экран-02 .к-портретам .миниатюра { width: 76px; height: 76px; margin: 0; flex: none; border-radius: 50%; overflow: hidden; background: var(--цвет-фон-карточки); }
+  #экран-02 .к-портретам .миниатюра img { width: 100%; height: 100%; object-fit: contain; }
+  #экран-02 .к-портретам b { display: block; font-size: var(--кегль-лид); }
+  #экран-02 .к-портретам span span { font-size: var(--кегль-текст); }
+  #экран-02 .к-портретам svg { width: 26px; height: 26px; margin-left: auto; flex: none; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+
   @media (max-width: 899px) {
     #экран-02 .преображение { grid-template-columns: 1fr; gap: 24px; }
     #экран-02 .преображение .лид { margin-bottom: 20px; }

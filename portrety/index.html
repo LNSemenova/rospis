@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Портреты на шаре — Людмила Семенова</title>
+<meta name="description" content="">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Портреты на шаре — Людмила Семенова">
+<meta property="og:description" content="">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;600;700&family=Nunito+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="../style.css">
+<style>
+:root {
+  --шрифт-заголовков: 'Alegreya Sans', 'Segoe UI', sans-serif;  --шрифт-текста: 'Nunito Sans', -apple-system, 'Segoe UI', sans-serif;
+  --цвет-фон: #EDF1F4;  --цвет-фон-2: #E2E8ED;  --цвет-фон-карточки: #FFFFFF;
+  --цвет-текст: #191B1E;  --цвет-текст-мягкий: #5B616B;  --цвет-текст-тихий: #666C75;
+  --цвет-акцент: #3E82C4;  --цвет-акцент-тёмный: #1B2F70;  --цвет-акцент-яркий: #D9892B;  --цвет-на-акценте: #FFFFFF;
+  --цвет-акцент-глубже: #2E5D9E;  --цвет-акцент-маркер: #264889;
+  --цвет-линия: #D8DFE6;
+  --цвет-тёмный-фон: #1B2F70;  --цвет-тёмный-фон-2: #1A2957;  --цвет-тёмный-текст: #EDF1F4;
+  --цвет-тёмный-фон-3: #1A274F;  --цвет-тёмный-фон-4: #1B2D69;
+  --цвет-тёплый: #A98450;  --цвет-тёплый-мягкий: #E6DAC6;
+  --цвет-стекло: color-mix(in srgb, #1B2F70 86%, transparent);
+  --тень: 0 12px 34px color-mix(in srgb, #1B2F70 6%, transparent);
+  --тень-чип: 0 10px 30px color-mix(in srgb, #1B2F70 12%, transparent);
+  --тень-глубокая: 0 24px 60px color-mix(in srgb, #1B2F70 35%, transparent);
+  --тень-спутник: 0 30px 60px color-mix(in srgb, #1B2F70 70%, transparent);
+  --тень-плиты: 0 40px 100px color-mix(in srgb, #1B2F70 70%, transparent);
+  --кегль-h1: 33px;  --кегль-h2: clamp(28px, 4.5vw, 44px);
+  --кегль-текст: clamp(16px, 1vw, 17px);  --кегль-лид: clamp(17px, 1.1vw, 18px);
+  --кегль-мелкий: 14px;  --кегль-кикер: clamp(14px, 1.1vw, 15px);  --кегль-цифра: 30px;  --разрядка-кикера: .03em;
+  --отступ-секции: clamp(64px, 10vw, 128px);  --отступ-блока: clamp(20px, 2.5vw, 32px);
+  --отступ-секции-тихо: clamp(50px, 7.8vw, 100px);  --отступ-секции-громко: clamp(74px, 11.6vw, 148px);
+  --ширина: 1120px;  --ширина-колонки: 560px;  --радиус: 16px;  --радиус-малый: 8px;
+  --радиус-карточки: 18px;  --радиус-плитки: 22px;  --радиус-телефон: 46px;  --кнопка-радиус: 14px;
+  --радиус-модуля: 16px;  --нить: 2px;
+  --плавность: cubic-bezier(.2, .7, .2, 1);  --длительность: .25s;
+  --цвет-тёплый-тёмный: #917145;
+}
+@media (min-width: 900px) {
+  :root { --кегль-h1: clamp(44px, 4vw, 58px); }
+}
+:root, .светлый { --цвет-кнопки: #1B2F70; --цвет-на-кнопке: #FFFFFF; --цвет-кнопки-навёл: #13214F; }
+.тёмный { --цвет-кнопки: #D9892B; --цвет-на-кнопке: #191B1E; --цвет-кнопки-навёл: #DF9C4E; }
+
+</style>
+<script>
+(function () {
+  var ЭТАЛОН = 0.535;                  // очко Open Sans — текстовой гарнитуры утверждённых макетов
+  var ПОТОЛОК = 1.2, МЁРТВАЯ = 0.02;   // выше потолка расползается раскладка; ближе к единице не трогаем вовсе
+  var КОМПЬЮТЕР = "(min-width: 900px)";
+  var ТОКЕНЫ = ["--кегль-текст", "--кегль-лид", "--кегль-мелкий", "--кегль-кикер"];
+  var корень = document.documentElement;
+  var холст = document.createElement("canvas").getContext("2d");
+  var ждём = 0;
+
+  function мера(буква) { var м = холст.measureText(буква); return (м && м.actualBoundingBoxAscent) || 0; }
+
+  function применить() {
+    ждём = 0;
+    if (!холст) { return; }
+
+    for (var i = 0; i < ТОКЕНЫ.length; i++) { корень.style.removeProperty(ТОКЕНЫ[i]); }
+    var стиль = getComputedStyle(корень), стек = стиль.getPropertyValue("--шрифт-текста").trim();
+    if (!стек) { return; }
+    холст.font = "400 100px " + стек;
+
+    var очко = Math.max(мера("х"), мера("x")) / 100;
+    if (!(очко > 0)) { return; }
+    var k = Math.round(Math.min(ПОТОЛОК, Math.max(1, ЭТАЛОН / очко)) * 1000) / 1000;
+    if (k - 1 < МЁРТВАЯ || !matchMedia(КОМПЬЮТЕР).matches) { k = 1; }
+    корень.setAttribute("data-очко", очко.toFixed(3));      // чтобы проверка могла сказать числа вслух
+    корень.setAttribute("data-поправка", k.toFixed(3));
+    if (k === 1) { return; }
+    for (i = 0; i < ТОКЕНЫ.length; i++) {
+      var было = стиль.getPropertyValue(ТОКЕНЫ[i]).trim();
+      if (было) { корень.style.setProperty(ТОКЕНЫ[i], "calc((" + было + ") * " + k + ")"); }
+    }
+  }
+
+  применить();
+
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(применить); }
+
+  addEventListener("resize", function () { ждём = ждём || requestAnimationFrame(применить); });
+})();
+</script>
+</head>
+<body>
+<style>
+  body { background: var(--цвет-фон); color: var(--цвет-текст); }
+  .стр-шапка { max-width: var(--ширина); margin: 0 auto; padding: 20px clamp(16px, 4vw, 32px); display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .стр-шапка .имя { font-family: var(--шрифт-заголовков); font-weight: 700; font-size: 22px; color: var(--цвет-акцент-тёмный); text-decoration: none; }
+  .назад { display: inline-flex; align-items: center; gap: 8px; color: var(--цвет-акцент-тёмный); text-decoration: none; font-weight: 600; font-size: var(--кегль-текст); padding: .55em 1.1em; border: 1px solid var(--цвет-линия); border-radius: 9em; background: var(--цвет-фон-карточки); }
+  .назад svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  .портреты { max-width: var(--ширина); margin: 0 auto; padding: clamp(24px, 5vw, 64px) clamp(16px, 4vw, 32px) var(--отступ-секции); }
+  .портреты .кикер { color: var(--цвет-тёмный-текст); }
+  .портреты h1 { font-family: var(--шрифт-заголовков); font-size: var(--кегль-h2); line-height: 1.1; color: var(--цвет-акцент-тёмный); margin: 0 0 16px; max-width: 18ch; }
+  .портреты .лид { font-size: var(--кегль-лид); line-height: 1.5; color: var(--цвет-текст-мягкий); max-width: 46ch; margin: 0 0 clamp(40px, 6vw, 72px); }
+
+  .пара { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: clamp(12px, 3vw, 40px); background: var(--цвет-фон-карточки); border-radius: var(--радиус-плитки); box-shadow: var(--тень); padding: clamp(16px, 3vw, 40px); }
+  .пара + .пара { margin-top: clamp(24px, 4vw, 48px); }
+  .пара figure { margin: 0; position: relative; aspect-ratio: 3 / 4; border-radius: var(--радиус-карточки); overflow: hidden; }
+  .пара .снимок img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
+  .пара .шар-фото { background: radial-gradient(ellipse 70% 55% at 50% 45%, #FFFFFF, transparent 70%), var(--цвет-фон-2); }
+  .пара .шар-фото img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+  .пара .ярлык { position: absolute; top: 12px; left: 12px; padding: .3em .9em; border-radius: 9em; font-size: var(--кегль-мелкий); font-weight: 700; background: var(--цвет-стекло); color: var(--цвет-тёмный-текст); z-index: 2; }
+  .пара .стрелка-к { width: clamp(28px, 4vw, 48px); color: var(--цвет-тёплый); }
+  .пара .стрелка-к svg { width: 100%; height: auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; display: block; }
+  .пара .подпись { grid-column: 1 / -1; margin: 4px 0 0; }
+  .подпись b { display: block; font-family: var(--шрифт-заголовков); font-size: clamp(22px, 2.2vw, 28px); color: var(--цвет-акцент-тёмный); }
+  .подпись span { color: var(--цвет-текст-мягкий); font-size: var(--кегль-текст); }
+  .скоро { display: grid; place-items: center; text-align: center; padding: 16px; border: 2px dashed var(--цвет-линия); background: var(--цвет-фон); color: var(--цвет-текст-мягкий); font-size: var(--кегль-текст); }
+
+  .заказ { margin-top: clamp(48px, 7vw, 88px); text-align: center; }
+  .заказ h2 { font-family: var(--шрифт-заголовков); font-size: clamp(24px, 3vw, 34px); color: var(--цвет-акцент-тёмный); margin: 0 0 10px; }
+  .заказ p { color: var(--цвет-текст-мягкий); font-size: var(--кегль-лид); margin: 0 auto 24px; max-width: 40ch; }
+  .заказ .кнопки { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+</style>
+
+<header class="стр-шапка">
+  <a class="имя" href="../">Людмила Семенова</a>
+  <a class="назад" href="../#экран-02"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Все работы</a>
+</header>
+
+<main class="портреты">
+  <p class="кикер">Портреты на шаре</p>
+  <h1>Портрет в образе сказочного героя</h1>
+  <p class="лид">Слева — фотография, по которой я писала, справа — готовый шар</p>
+
+  <div class="пара">
+    <figure class="снимок"><span class="ярлык">Фотография</span><img src="../img/tsarevna-foto.webp" alt="Фотография девочки, по которой написан портрет"></figure>
+    <span class="стрелка-к" aria-hidden="true"><svg viewBox="0 0 48 24"><path d="M2 12h42M34 3l10 9-10 9"/></svg></span>
+    <figure class="шар-фото"><span class="ярлык">Шар</span><img src="../img/tsarevna.webp" alt="Ёлочный шар с портретом девочки в образе царевны"></figure>
+    <p class="подпись"><b>Царевна</b><span>Девочка в образе сказочной царевны</span></p>
+  </div>
+
+  <div class="пара">
+    <figure class="снимок"><span class="ярлык">Фотография</span><img src="../img/tsarevich-foto.webp" alt="Фотография юноши, по которой написан портрет"></figure>
+    <span class="стрелка-к" aria-hidden="true"><svg viewBox="0 0 48 24"><path d="M2 12h42M34 3l10 9-10 9"/></svg></span>
+    <figure class="шар-фото скоро">Фото шара скоро появится</figure>
+    <p class="подпись"><b>Иван-Царевич</b><span>Парень с жар-птицей в руках</span></p>
+  </div>
+
+  <div class="заказ">
+    <h2>Хотите такой шар?</h2>
+    <p>Пришлите фотографию в Телеграм — обсудим образ и сроки</p>
+    <div class="кнопки">
+      <a class="кнопка кнопка--главная" href="https://t.me/l_semenova">Написать в Телеграм</a>
+      <a class="назад" href="../#экран-02">Все работы</a>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
