@@ -1810,6 +1810,57 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-04 .итог { padding: 12px 10px; }
   }
 
+/* экран 05 */
+#экран-05 h2 { margin: 0 0 16px; max-width: 18ch; }
+  #экран-05 .лид { margin: 0 0 clamp(32px, 5vw, 56px); max-width: 46ch; }
+
+  #экран-05 .главный { display: grid; grid-template-columns: 190px minmax(0, 1fr); align-items: center; gap: clamp(20px, 4vw, 56px); padding: clamp(22px, 4vw, 52px); border-radius: var(--радиус-плитки); margin: 0 0 clamp(20px, 2.4vw, 32px); }
+  #экран-05 .главный blockquote { margin: 0; }
+  #экран-05 .главный blockquote p { margin: 0 0 18px; font-size: var(--кегль-h2); line-height: 1.25; font-weight: 700; }
+  #экран-05 .главный .кадр { margin: 0; width: 190px; aspect-ratio: 195 / 438; border-radius: var(--радиус-карточки); overflow: hidden; order: -1; }
+  #экран-05 .главный .кадр img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  #экран-05 .лента { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+  #экран-05 .лента > .малый { flex: 0 1 calc((100% - 48px) / 3); }
+  #экран-05 .малый { padding: clamp(20px, 2.2vw, 28px); border-radius: var(--радиус-плитки); display: flex; flex-direction: column; }
+  #экран-05 .малый blockquote { margin: 0; display: flex; flex-direction: column; height: 100%; }
+  #экран-05 .малый blockquote p { margin: 0 0 18px; font-size: var(--кегль-текст); line-height: 1.5; }
+  #экран-05 .малый footer { margin-top: auto; }
+  #экран-05 .малый:nth-child(1), #экран-05 .малый:nth-child(5) { grid-column: span 1; }
+
+  #экран-05 .кто { display: block; font-size: var(--кегль-лид); font-weight: 700; }
+  #экран-05 .где { display: block; font-size: var(--кегль-мелкий); line-height: 1.4; margin-top: 2px; }
+  #экран-05 .метка-кавычки { display: block; width: 28px; height: 22px; margin: 0 0 14px; fill: currentColor; }
+
+  #экран-05 .ссылка-канал { display: inline-flex; align-items: center; gap: 10px; margin-top: clamp(28px, 3.5vw, 44px); font-size: var(--кегль-лид); font-weight: 700; text-decoration: underline; text-underline-offset: .25em; text-decoration-thickness: 1.5px; }
+  #экран-05 .ссылка-канал svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+  #экран-05.светлый .главный, #экран-05.светлый .малый { background: var(--цвет-фон-карточки); box-shadow: var(--тень); }
+  #экран-05.светлый .главный blockquote p { color: var(--цвет-акцент-тёмный); }
+  #экран-05.светлый .малый blockquote p { color: var(--цвет-текст); }
+  #экран-05.светлый .кто { color: var(--цвет-акцент-тёмный); }
+  #экран-05.светлый .где { color: var(--цвет-текст-мягкий); }
+  #экран-05.светлый .метка-кавычки { color: var(--цвет-тёплый); }
+  #экран-05.светлый .главный .кадр { background: var(--цвет-фон-2); box-shadow: var(--тень-чип); }
+  #экран-05.светлый .ссылка-канал { color: var(--цвет-акцент-тёмный); }
+
+  #экран-05.тёмный .главный, #экран-05.тёмный .малый { background: var(--цвет-тёмный-фон-3); box-shadow: var(--тень-глубокая); }
+  #экран-05.тёмный .главный blockquote p { color: var(--цвет-тёмный-текст); }
+  #экран-05.тёмный .малый blockquote p { color: var(--цвет-тёмный-текст); }
+  #экран-05.тёмный .кто { color: var(--цвет-тёплый-мягкий); }
+  #экран-05.тёмный .где { color: color-mix(in srgb, var(--цвет-тёмный-текст) 78%, transparent); }
+  #экран-05.тёмный .метка-кавычки { color: var(--цвет-тёплый-мягкий); }
+  #экран-05.тёмный .главный .кадр { background: var(--цвет-тёмный-фон-4); }
+  #экран-05.тёмный .ссылка-канал { color: var(--цвет-тёмный-текст); }
+
+  @media (max-width: 899px) {
+    #экран-05 .главный { grid-template-columns: 1fr; }
+    #экран-05 .главный .кадр { order: -1; width: min(200px, 56vw); justify-self: start; }
+    #экран-05 .лента { display: flex; overflow-x: auto; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; scrollbar-width: thin; padding-bottom: 14px; }
+    #экран-05 .лента { flex-wrap: nowrap; justify-content: flex-start; gap: 14px; }
+    #экран-05 .лента > .малый { flex: 0 0 78vw; scroll-snap-align: start; }
+  }
+
 /* экран 06 */
 #экран-06 .витрина { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 6vw, 96px); align-items: start; }
   #экран-06 .витрина__шапка { position: sticky; top: 48px; }
