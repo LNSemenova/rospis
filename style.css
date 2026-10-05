@@ -1895,3 +1895,50 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-06 .плашка { grid-template-columns: 1fr; row-gap: 16px; }
     #экран-06 .цена { justify-self: start; }
   }
+
+/* экран 07 */
+#экран-07 .связь { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(36px, 6vw, 88px); align-items: start; }
+  #экран-07 .связь__слева h2 { margin: 0 0 20px; }
+  #экран-07 .связь__слева .лид { margin: 0 0 clamp(26px, 3vw, 40px); max-width: 30ch; }
+  #экран-07 .приглашение { position: relative; padding: clamp(24px, 2.6vw, 34px) clamp(24px, 2.8vw, 36px) clamp(24px, 2.6vw, 34px) clamp(32px, 3.2vw, 44px);
+      border-radius: var(--радиус-плитки); overflow: hidden; }
+  #экран-07 .приглашение::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; }
+  #экран-07 .приглашение h3 { margin: 0 0 10px; font-size: var(--кегль-цифра); line-height: 1.15; }
+  #экран-07 .приглашение p { margin: 0 0 clamp(20px, 2.4vw, 28px); font-size: var(--кегль-лид); line-height: 1.5; }
+  #экран-07 .группы { display: grid; gap: clamp(28px, 3vw, 40px); }
+  #экран-07 .группа__метка { margin: 0 0 12px; font-size: var(--кегль-текст); font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+  #экран-07 .строки { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  #экран-07 .строка { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; column-gap: 16px; min-height: 64px;
+      padding: 12px clamp(16px, 2vw, 24px); border-radius: var(--радиус-плитки); text-decoration: none; transition: transform .2s ease; }
+  #экран-07 .строка:hover { transform: translateX(4px); }
+  #экран-07 .строка__знак { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; }
+  #экран-07 .строка__знак .иконка, #экран-07 .строка__знак svg { width: 24px; height: 24px; }
+  #экран-07 .строка__имя { display: block; font-size: var(--кегль-текст); line-height: 1.3; }
+  #экран-07 .строка__адрес { display: block; font-size: var(--кегль-лид); font-weight: 800; line-height: 1.3; overflow-wrap: anywhere; }
+  #экран-07 .строка__стрелка { line-height: 1; }
+
+  #экран-07.тёмный .приглашение { background: linear-gradient(120deg, color-mix(in srgb, var(--цвет-тёмный-текст) 11%, transparent), color-mix(in srgb, var(--цвет-тёмный-текст) 3%, transparent));
+      border: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 16%, transparent); box-shadow: var(--тень-глубокая); }
+  #экран-07.тёмный .приглашение::before { background: linear-gradient(var(--цвет-тёплый), var(--цвет-акцент-яркий)); }
+  #экран-07.тёмный .приглашение h3, #экран-07.тёмный .строка__адрес { color: var(--цвет-тёмный-текст); }
+  #экран-07.тёмный .приглашение p, #экран-07.тёмный .строка__имя { color: color-mix(in srgb, var(--цвет-тёмный-текст) 78%, transparent); }
+  #экран-07.тёмный .группа__метка, #экран-07.тёмный .строка__стрелка { color: var(--цвет-тёплый-мягкий); }
+  #экран-07.тёмный .строка { background: color-mix(in srgb, var(--цвет-тёмный-текст) 7%, transparent); border: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 16%, transparent); }
+  #экран-07.тёмный .строка:hover { border-color: var(--цвет-тёплый); }
+  #экран-07.тёмный .строка__знак { color: var(--цвет-тёплый-мягкий); background: color-mix(in srgb, var(--цвет-тёплый) 34%, transparent); }
+  #экран-07.тёмный .строка__знак .иконка { color: var(--цвет-тёплый-мягкий); stroke: currentColor; }
+
+  #экран-07.светлый .приглашение { background: var(--цвет-фон-карточки); border: 1px solid var(--цвет-линия); box-shadow: var(--тень-чип); }
+  #экран-07.светлый .приглашение::before { background: linear-gradient(var(--цвет-тёплый), var(--цвет-акцент-яркий)); }
+  #экран-07.светлый .приглашение h3, #экран-07.светлый .строка__адрес { color: var(--цвет-акцент-тёмный); }
+  #экран-07.светлый .приглашение p, #экран-07.светлый .строка__имя { color: var(--цвет-текст-мягкий); }
+  #экран-07.светлый .группа__метка, #экран-07.светлый .строка__стрелка { color: var(--цвет-акцент-тёмный); }
+  #экран-07.светлый .строка { background: var(--цвет-фон-карточки); border: 1px solid var(--цвет-линия); box-shadow: var(--тень-чип); }
+  #экран-07.светлый .строка:hover { border-color: var(--цвет-тёплый); }
+  #экран-07.светлый .строка__знак { color: var(--цвет-на-акценте); background: var(--цвет-акцент-тёмный); }
+  #экран-07.светлый .строка__знак .иконка { color: var(--цвет-на-акценте); stroke: currentColor; }
+
+  @media (max-width: 899px) {
+    #экран-07 .связь { grid-template-columns: 1fr; gap: 32px; }
+    #экран-07 .строка { min-height: 72px; }
+  }
