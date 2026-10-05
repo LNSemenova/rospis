@@ -1750,6 +1750,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-03 .скоро { display: grid; place-items: center; text-align: center; padding: 12px; border: 2px dashed; font-size: var(--кегль-мелкий); }
   #экран-03 .действие { margin-top: clamp(32px, 4vw, 48px); }
 
+  #экран-03.светлый .кнопка--главная { background: var(--цвет-акцент-яркий); color: var(--цвет-текст); }
   #экран-03.светлый .пара { background: var(--цвет-фон-карточки); box-shadow: var(--тень); }
   #экран-03.светлый .шар-фото { background: radial-gradient(ellipse 70% 55% at 50% 45%, var(--цвет-фон-карточки), transparent 70%), var(--цвет-фон-2); }
   #экран-03.светлый .ярлык { background: var(--цвет-стекло); color: var(--цвет-тёмный-текст); }
