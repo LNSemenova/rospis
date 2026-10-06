@@ -1901,7 +1901,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-05 .ссылка-канал { display: inline-flex; align-items: center; gap: 10px; margin-top: clamp(28px, 3.5vw, 44px); font-size: var(--кегль-лид); font-weight: 700; text-decoration: underline; text-underline-offset: .25em; text-decoration-thickness: 1.5px; }
   #экран-05 .ссылка-канал svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
 
-  #экран-05.светлый .главный, #экран-05.светлый .малый { background: var(--цвет-фон-карточки); box-shadow: var(--тень); }
+  #экран-05.светлый .главный, #экран-05.светлый .малый { background: color-mix(in srgb, var(--цвет-акцент) 26%, var(--цвет-фон-карточки)); border: 1px solid color-mix(in srgb, var(--цвет-акцент) 38%, transparent); box-shadow: var(--тень); }
   #экран-05.светлый .главный blockquote p { color: var(--цвет-акцент-тёмный); }
   #экран-05.светлый .малый blockquote p { color: var(--цвет-текст); }
   #экран-05.светлый .кто { color: var(--цвет-акцент-тёмный); }
