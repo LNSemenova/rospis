@@ -1817,13 +1817,13 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-03 .действие { margin-top: clamp(32px, 4vw, 48px); }
 
   #экран-03.светлый .кнопка--главная { background: var(--цвет-акцент-яркий); color: var(--цвет-текст); }
-  #экран-03.светлый .пара { background: var(--цвет-фон-карточки); box-shadow: var(--тень); }
-  #экран-03.светлый .шар-фото { background: radial-gradient(ellipse 70% 55% at 50% 45%, var(--цвет-фон-карточки), transparent 70%), var(--цвет-фон-2); }
+  #экран-03.светлый .пара { background: color-mix(in srgb, var(--цвет-тёмный-фон-3) 72%, var(--цвет-тёмный-текст) 28%); border: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 12%, transparent); box-shadow: var(--тень-глубокая); }
+  #экран-03.светлый .шар-фото { background: radial-gradient(ellipse 70% 55% at 50% 45%, color-mix(in srgb, var(--цвет-акцент) 60%, transparent), transparent 72%), radial-gradient(ellipse 60% 10% at 50% 93%, color-mix(in srgb, var(--цвет-тёмный-текст) 22%, transparent), transparent 80%), color-mix(in srgb, var(--цвет-тёмный-фон-3) 72%, var(--цвет-тёмный-текст) 28%); }
   #экран-03.светлый .ярлык { background: var(--цвет-стекло); color: var(--цвет-тёмный-текст); }
-  #экран-03.светлый .стрелка-к { color: var(--цвет-тёплый); }
-  #экран-03.светлый .подпись b { color: var(--цвет-акцент-тёмный); }
-  #экран-03.светлый .подпись span { color: var(--цвет-текст-мягкий); }
-  #экран-03.светлый .скоро { border-color: var(--цвет-линия); background: var(--цвет-фон); color: var(--цвет-текст-мягкий); }
+  #экран-03.светлый .стрелка-к { color: var(--цвет-тёплый-мягкий); }
+  #экран-03.светлый .подпись b { color: var(--цвет-тёмный-текст); }
+  #экран-03.светлый .подпись span { color: color-mix(in srgb, var(--цвет-тёмный-текст) 78%, transparent); }
+  #экран-03.светлый .скоро { border-color: color-mix(in srgb, var(--цвет-тёмный-текст) 30%, transparent); background: transparent; color: var(--цвет-тёмный-текст); }
 
   #экран-03.тёмный .пара { background: var(--цвет-тёмный-фон-3); box-shadow: var(--тень-глубокая); }
   #экран-03.тёмный .шар-фото { background: var(--цвет-тёмный-фон-4); }
