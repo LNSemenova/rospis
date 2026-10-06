@@ -1762,7 +1762,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-02 .плёнка { list-style: none; margin: 0; padding: 0 0 14px; display: flex; gap: clamp(14px, 1.8vw, 22px); overflow-x: auto; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; scrollbar-width: thin; }
   #экран-02 .плёнка-кадр { flex: 0 0 clamp(220px, 21vw, 280px); scroll-snap-align: start; }
   #экран-02 .кадр-имя { margin: 12px 4px 2px; font-size: var(--кегль-лид); font-weight: 700; }
-  #экран-02 .кадр-что { margin: 0 4px; font-size: var(--кегль-мелкий); line-height: 1.45; }
+  #экран-02 .кадр-что { margin: 0 4px; font-size: var(--кегль-текст); line-height: 1.45; }
 
   #экран-02.тёмный .витрина-фон { background: radial-gradient(ellipse 70% 55% at 50% 45%, color-mix(in srgb, var(--цвет-акцент) 60%, transparent), transparent 72%), radial-gradient(ellipse 60% 10% at 50% 93%, color-mix(in srgb, var(--цвет-тёмный-текст) 22%, transparent), transparent 80%), color-mix(in srgb, var(--цвет-тёмный-фон-3) 72%, var(--цвет-тёмный-текст) 28%);
       border: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 12%, transparent); box-shadow: var(--тень-глубокая); }
@@ -1816,7 +1816,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-03 .скоро { display: grid; place-items: center; text-align: center; padding: 12px; border: 2px dashed; font-size: var(--кегль-мелкий); }
   #экран-03 .действие { margin-top: clamp(32px, 4vw, 48px); }
 
-  #экран-03.светлый .кнопка--главная { background: var(--цвет-акцент-яркий); color: var(--цвет-текст); }
+  #экран-03.светлый .кнопка--главная { background: var(--цвет-тёмный-фон); color: var(--цвет-тёплый); }
   #экран-03.светлый .пара { background: color-mix(in srgb, var(--цвет-тёмный-фон-3) 72%, var(--цвет-тёмный-текст) 28%); border: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 12%, transparent); box-shadow: var(--тень-глубокая); }
   #экран-03.светлый .шар-фото { background: radial-gradient(ellipse 70% 55% at 50% 45%, color-mix(in srgb, var(--цвет-акцент) 60%, transparent), transparent 72%), radial-gradient(ellipse 60% 10% at 50% 93%, color-mix(in srgb, var(--цвет-тёмный-текст) 22%, transparent), transparent 80%), color-mix(in srgb, var(--цвет-тёмный-фон-3) 72%, var(--цвет-тёмный-текст) 28%); }
   #экран-03.светлый .ярлык { background: var(--цвет-стекло); color: var(--цвет-тёмный-текст); }
