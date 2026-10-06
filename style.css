@@ -1764,7 +1764,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-02 .кадр-имя { margin: 12px 4px 2px; font-size: var(--кегль-лид); font-weight: 700; }
   #экран-02 .кадр-что { margin: 0 4px; font-size: var(--кегль-мелкий); line-height: 1.45; }
 
-  #экран-02.тёмный .витрина-фон { background: radial-gradient(ellipse 70% 55% at 50% 45%, color-mix(in srgb, var(--цвет-акцент) 45%, transparent), transparent 70%), radial-gradient(ellipse 60% 10% at 50% 93%, color-mix(in srgb, var(--цвет-тёмный-текст) 16%, transparent), transparent 80%), var(--цвет-тёмный-фон-3);
+  #экран-02.тёмный .витрина-фон { background: radial-gradient(ellipse 70% 55% at 50% 45%, color-mix(in srgb, var(--цвет-акцент) 60%, transparent), transparent 72%), radial-gradient(ellipse 60% 10% at 50% 93%, color-mix(in srgb, var(--цвет-тёмный-текст) 22%, transparent), transparent 80%), color-mix(in srgb, var(--цвет-тёмный-фон-3) 72%, var(--цвет-тёмный-текст) 28%);
       border: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 12%, transparent); box-shadow: var(--тень-глубокая); }
   #экран-02.тёмный .выбор button { border-color: color-mix(in srgb, var(--цвет-тёмный-текст) 35%, transparent); color: var(--цвет-тёмный-текст); }
   #экран-02.тёмный .выбор button[aria-pressed="true"] { background: var(--цвет-тёплый-мягкий); border-color: var(--цвет-тёплый-мягкий); color: var(--цвет-акцент-тёмный); }
@@ -1797,6 +1797,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-02 .история { min-height: 0; }
     #экран-02 .стрелки { display: none; }
     #экран-02 .плёнка-кадр { flex-basis: 64vw; }
+    #экран-02 { padding-top: 40px; }
   }
 
 /* экран 03 */
